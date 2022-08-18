@@ -1,6 +1,13 @@
 const awsBuddy = require('amazon-buddy');
+const cors = require('cors');
 const express = require('express');
 const app = express();
+
+app.use(
+  cors({
+    origin: '*',
+  })
+);
 
 app.get('/search', async (req, res) => {
   // ../search?keyword=phone&count=50&country=AE
