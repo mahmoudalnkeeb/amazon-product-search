@@ -5,7 +5,7 @@ const app = express();
 app.get('/search', async (req, res) => {
   // ../search?keyword=phone&count=50&country=AE
   const products = await awsBuddy.products({
-    keyword: req.query.keyword || '',
+    keyword: req.query.keyword || 'home',
     number: +req.query.count || 50,
     country: req.query.country || 'AE',
   });
